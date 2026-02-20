@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*1 esep
+    /*body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      padding: 40px;
+    }
+    .card {
+      width: 300px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+    .card.active {
+      border: 3px solid #2563eb;
+      background: #e0e7ff;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }*/
+    /*2 esep*/
+    /* Base styles */
+   .container {
+    border: 2px solid #333;
+    transition: all 0.3s ease; 
+    margin-top: 20px;
+    }
+
+    .compact {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    }
+
+    .large {
+    padding: 40px;
+    font-size: 24px;
+    background-color: #e0f7fa;
+    }
+
+
+</style>
+<body>
+
+    <div class="card" id="card">
+    <h3>Card</h3>
+    <p>This card can be selected</p>
+  </div>
+  <button id="btn">Select/Unselect</button>
+
+  <button id="toggleBtn">Switch to Large</button>
+
+<div id="box" class="container">
+  <h2>Layout Mode</h2>
+  <p>This container changes its padding and font size.</p>
+</div>
+
+  <script src="homework.js"></script>
+</body>
+</html>

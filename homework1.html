@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Задачи</title>
+    <style>
+        body {
+           font-family: sans-serif; 
+           background: #f4f4f9; 
+           padding: 20px; 
+          }
+        .card { 
+          background: white; 
+          padding: 15px; 
+          margin-bottom: 10px;
+           border-radius: 8px; 
+           border: 1px solid #ddd; 
+          }
+        
+        .hidden { 
+          display: none; 
+        }
+        .status-on { 
+          color: green; 
+          font-weight: bold; 
+        }
+        .selected { 
+          border: 3px solid #3498db; 
+          background-color: #ebf5fb; 
+        }
+        .large-mode { 
+          padding: 30px; 
+          font-size: 20px; 
+        }
+        .badge { 
+          background: red; 
+          color: white; 
+          border-radius: 50%; 
+          padding: 2px 7px; 
+          font-size: 12px; 
+        }
+        .liked { 
+          color: red; 
+          font-weight: bold; 
+        }
+        .unlocked { 
+          color: orange; 
+          font-weight: bold; 
+        }
+        .loading { 
+          color: blue; 
+        }
+        .item-card { 
+          border: 1px solid #ddd; 
+          padding: 10px; 
+          margin: 5px 0; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <p id="status-text">Status: OFF</p>
+        <button id="status-btn">Переключить статус</button>
+    </div>
+
+    <div class="card">
+        <p id="warn-msg" class="hidden"> Warning message</p>
+        <button id="warn-btn">Show / Hide Warning</button>
+    </div>
+
+    <div class="card" id="info-card">
+        <p>Это карточка с информацией</p>
+        <button id="highlight-btn">Select / Unselect</button>
+    </div>
+
+    <div class="card" id="layout-box">
+        <p>Контейнер с текстом</p>
+        <button id="layout-btn">Compact / Large</button>
+    </div>
+
+    <div class="card">
+        <p>Messages <span id="msg-badge" class="badge hidden">1</span></p>
+        <button id="badge-btn">Вкл / Выкл Badge</button>
+    </div>
+
+    <div class="card">
+        <button id="like-btn">🤍 Like</button>
+    </div>
+
+    <div class="card">
+        <p>Короткий текст... <span id="more-text" class="hidden">а вот и секретное продолжение!</span></p>
+        <button id="read-btn">Read more</button>
+    </div>
+
+    <div class="card">
+        <p id="lock-status">Locked</p>
+        <button id="lock-btn">Открыть / Закрыть</button>
+    </div>
+
+    <div class="card">
+        <div class="item-card">Карта 1</div>
+        <div class="item-card">Карта 2</div>
+        <div class="item-card">Карта 3</div>
+        <button id="visibility-btn">Show / Hide All</button>
+    </div>
+
+    <div class="card">
+        <p id="load-status">Ready</p>
+        <button id="load-btn">Начать загрузку</button>
+    </div>
+
+
+    <script>
+
+        const statusText = document.getElementById("status-text");
+        const statusBtn = document.getElementById("status-btn");
+        statusBtn.addEventListener("click", () => {
+            if (statusText.textContent === "Status: OFF") {
+                statusText.textContent = "Status: ON";
+                statusText.style.color = "green";
+            } else {
+                statusText.textContent = "Status: OFF";
+                statusText.style.color = "black";
+            }
+        });
+
+        const warnBtn = document.getElementById("warn-btn");
+        warnBtn.addEventListener("click", () => {
+            const msg = document.getElementById("warn-msg");
+            if (msg.style.display === "block") {
+                msg.style.display = "none";
+            } else {
+                msg.style.display = "block";
+            }
+        });
+
+   
+        const highlightBtn = document.getElementById("highlight-btn");
+        highlightBtn.addEventListener("click", () => {
+            document.getElementById("info-card").classList.toggle("selected");
+        });
+
+  
+        const layoutBtn = document.getElementById("layout-btn");
+        layoutBtn.addEventListener("click", () => {
+            document.getElementById("layout-box").classList.toggle("large-mode");
+        });
+
+  
+        const badgeBtn = document.getElementById("badge-btn");
+        badgeBtn.addEventListener("click", () => {
+            document.getElementById("msg-badge").classList.toggle("hidden");
+        });
+
+   
+        const likeBtn = document.getElementById("like-btn");
+        likeBtn.addEventListener("click", () => {
+            if (likeBtn.textContent === "🤍 Like") {
+                likeBtn.textContent = "❤️ Liked";
+                likeBtn.style.color = "red";
+            } else {
+                likeBtn.textContent = "🤍 Like"; 
+                likeBtn.style.color = "black";
+            }
+        });
+
+
+        const readBtn = document.getElementById("read-btn");
+        readBtn.addEventListener("click", () => {
+            const more = document.getElementById("more-text");
+            if (more.style.display === "inline") {
+                more.style.display = "none"; 
+                readBtn.textContent = "Read more";
+            } else {
+                more.style.display = "inline";
+                readBtn.textContent = "Read less";
+            }
+        });
+
+        const lockBtn = document.getElementById("lock-btn");
+        const lockStatus = document.getElementById("lock-status");
+        lockBtn.addEventListener("click", () => {
+            if (lockStatus.textContent === "Locked") {
+                lockStatus.textContent = "Unlocked";
+                lockStatus.style.color = "orange";
+            } else {
+                lockStatus.textContent = "Locked";
+                lockStatus.style.color = "black";
+            }
+        });
+
+
+        const visibilityBtn = document.getElementById("visibility-btn");
+        visibilityBtn.addEventListener("click", () => {
+            const cards = document.querySelectorAll(".item-card");
+            cards.forEach(card => {
+                card.classList.toggle("hidden");
+            });
+        });
+
+        
+        const loadBtn = document.getElementById("load-btn");
+        loadBtn.addEventListener("click", () => {
+            const status = document.getElementById("load-status");
+            if (status.textContent === "Ready") {
+                status.textContent = "Loading...";
+                status.style.color = "blue";
+            } else {
+                status.textContent = "Ready";
+                status.style.color = "black";
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
