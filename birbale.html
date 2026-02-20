@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Mini Practise</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding:40px;
+    }
+    /*
+    #message{
+        margin-bottom:20px;
+    }
+    #btn{
+        padding:10px 16px;
+        font-size:16px;
+        cursor:pointer;
+    }
+    .hint{
+        margin-top:16px;
+        color:#555;
+    }
+    button{
+        background-color:pink ;
+        width:200px;
+        height:50px;
+        color: rgb(250, 252, 253);
+        border-radius: 50px;
+        text-align: center;
+        font-size: 18px;
+
+    }
+    .hidden{
+        display:none;
+    }
+    .big{
+        font-size:32px;
+    }
+    
+    .dark{
+        background-color:#111;
+        color:white;
+    }
+        
+        .status {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .on {
+      color: green;
+    }
+
+    .off {
+      color: red;
+    }
+
+    .warning {
+      margin-top: 10px;
+      padding: 10px;
+      background: #fde68a;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }*/
+
+    .highlight{
+      background-color: yellow;
+      padding: 10px;
+    }
+</style>
+<body>
+    <!--
+    <h1 id="message">Welcome</h1>
+    <button id="btn">Click me</button>
+    <button id="styleBtn">Change the color</button>
+    <button id="toggleBtn">Show/Hide text</button>
+    <p class="hint">
+        Open devtools=>Console to see logs. 
+    </p>
+
+    <h2 id="title">Name</h2>
+    <button id="changeBtn">Change Name</button>
+    
+    <p id="text">this is a text</p>
+    <button id="changeStyle">Change</button>
+
+    <p id="text">Hello World</p>
+    <button id="btn">Show / Hide</button>
+
+    <p id="text">Toggle makes things</p>
+    <button id="btn">Big/Small</button>
+
+
+    <p id="text">Toggle makes things easy</p>
+    <button id="sizeBtn">Big/Small</button>
+    <script src="birbale.js"></script>
+
+    <button id="themeBtn">Dark/Light</button>
+
+    <h4>aaaaaaaaa</h4>
+    <p id="statusText" class="status off">Status: OFF</p>
+    <button id="toggleStatus">Toggle status</button>
+  </div>
+
+  <div class="box">
+    <h3>aaaaaa</h3>
+    <button id="toggleWarning">Show / hide warning</button>
+    <div id="warning" class="warning">Warning message</div>
+  </div>
+
+<input type="text" id="name">
+<button id="btn">Show</button>
+<p id="result"></p>
+
+
+<input type="text" id="username">
+<button id="greetBtn">Greet</button>
+<p id="message"></p>
+
+
+<input type="text" id="text">
+<button id="btn">Send</button>
+<p id="output"></p>
+
+
+<input type="text" id="liveInput">
+<p id="preview"></p>
+
+
+<input type="text" id="text">
+<p>Length:<span id="count">0</span></p>
+
+<input type="text" id="input">
+<button id="btn" disabled>Send</button>
+
+
+<input type="number" id="numInput">
+<button id="btn">Double</button>
+<p id="result"></p>
+
+<form id="myForm">
+  <input type="text" id="name">
+  <button>Send</button>
+</form>
+<p id="result"></p>
+
+
+<form id="form">
+  <input type="text" id="name">
+  <button>Send</button>
+</form>
+<p id="message"></p>
+
+
+<form id="form">
+  <input type="text" id="name" placeholder="Name">
+  <input type="number" id="age" placeholder="Age">
+  <button>Send</button>
+</form>
+<p id="result"></p>
+
+
+
+<form id="form">
+  <input type="text" id="input">
+  <button id="btn">Send</button>
+</form>
+
+<p id="result"></p>
+
+
+<input type="radio" name="gender" id="male" value="Male">
+<label for="male">Male</label>
+
+<input type="radio" name="gender" id="female" value="Female">
+<label for="female">Female</label>
+
+<button id="btn">Show</button>
+<p id="result"></p>
+
+
+
+<input type="checkbox" id="agree">
+<label for="agree">I agree</label>
+<p id="result"></p>
+
+<select id="city">
+  <option value="">Choose city</option>
+  <option value="Almaty">Almaty</option>
+  <option value="Astana">Astana</option>
+  <option value="Shymkent">Shymkent</option>
+  <option value="Taraz">Taraz</option>
+  <option value="Atyrau">Atyrau</option>
+  <option value="Aktau">Aktau</option>
+  <option value="Aktobe">Aktobe</option>
+  <option value="Kokshetau">Kokshetau</option>
+  <option value="Karaganda">Karaganda</option>
+  <option value="Kyzylorda">Kyzylorda</option>
+
+</select>
+
+<p id="result"></p>
+
+
+<input type="checkbox" id="agree">
+<label for="agree">I agree</label>
+<p id="result"></p>
+
+<select id="city">
+  <option value="">Choose city</option>
+  <option value="Almaty">Almaty</option>
+  <option value="Astana">Astana</option>
+  <option value="Astana">Astana</option>
+  <option value="Shymkent">Shymkent</option>
+  <option value="Taraz">Taraz</option>
+  <option value="Atyrau">Atyrau</option>
+  <option value="Aktau">Aktau</option>
+  <option value="Aktobe">Aktobe</option>
+  <option value="Kokshetau">Kokshetau</option>
+  <option value="Karaganda">Karaganda</option>
+  <option value="Kyzylorda">Kyzylorda</option>
+</select>
+
+<p id="result"></p>
+
+
+
+<input type="radio" name="gender" id="male" value="Male">
+<label for="male">Male</label>
+
+<input type="radio" name="gender" id="female" value="Female">
+<label for="female">Female</label>
+
+<p id="result"></p>
+
+
+
+<div>
+  <p>Select an option:</p>
+  <label><input type="radio" name="choice" value="Option 1"> Option 1</label><br>
+  <label><input type="radio" name="choice" value="Option 2"> Option 2</label><br>
+  
+  <button id="nextBtn">Next</button>
+  <p id="message"></p>
+</div>
+
+<p class="item">One</p>
+<p class="item">Two</p>
+
+
+
+<div id="box">Important message</div>
+<button id="btn">Highlight</button>
+
+-->
+
+
+
+<script src="birbale.js"></script>
+</body>
+</html>

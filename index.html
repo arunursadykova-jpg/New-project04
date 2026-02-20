@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comments</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f5f6fa;
+  padding:40px;
+}
+
+.wrapper{
+  max-width:720px;
+  margin:auto;
+}
+
+.comment{
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  display:flex;
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.reply{
+  margin-left:50px;
+}
+
+.score{
+  background:#f0f2ff;
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+  width:42px;
+}
+
+.score span{
+  display:block;
+  color:#6b6cff;
+  font-weight:bold;
+}
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.content{
+  flex:1;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:6px;
+}
+
+.header strong{
+  font-size:15px;
+}
+
+.time{
+  color:#8b8b8b;
+  font-size:14px;
+}
+
+.you{
+  background:#6b6cff;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:4px;
+}
+
+.action{
+  margin-left:auto;
+  color:#6b6cff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+p{
+  color:#686767;
+  line-height:1.5;
+}
+
+.add{
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  display:flex;
+  gap:12px;
+  height: 150px;
+}
+
+.add input{
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.add button{
+  background:#6b6cff;
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:10px 18px;
+  height: 40px;
+  width: 100px;
+}
+.delete{
+    margin-left:190px;
+    color:#ff6b6b;
+    font-weight:bold;
+    cursor:pointer;
+}
+.plus{
+    cursor:pointer;
+    color: #4b4b4b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="comment">
+    <div class="score">
+      <span class="plus">+</span>
+      <span>12</span>
+      <span class="plus">-</span>
+    </div>
+
+    <img src="one.jpeg" class="avatar">
+
+    <div class="content">
+      <div class="header">
+        <strong>amyrobson</strong>
+        <span class="time">1 month ago</span>
+        <span class="action">Reply</span>
+      </div>
+      <p>
+        Impressive! Though it seems the drag feature could be improved.
+        But overall it looks incredible.You've nailed the design and the responsiveness
+        at various breakpoints works really well.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="comment">
+    <div class="score">
+      <span class="plus">+</span>
+      <span>5</span>
+      <span class="plus">-</span>
+    </div>
+
+    <img src="two.jpeg" class="avatar">
+
+    <div class="content">
+      <div class="header">
+        <strong>maxblagun</strong>
+        <span class="time">2 weeks ago</span>
+        <span class="action">Reply</span>
+      </div>
+      <p>
+        Woah, your project looks awesome! How long have you been coding for?
+        I'm still new, but I want to dive into React soon.Perhaps you can give me
+        an insight on where I can learn React?Thanks!
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="comment reply">
+    <div class="score">
+      <span class="plus">+</span>
+      <span>4</span>
+      <span class="plus">-</span>
+    </div>
+
+    <img src="three.webp" class="avatar">
+
+    <div class="content">
+      <div class="header">
+        <strong>ramsesmiron</strong>
+        <span class="time">1 week ago</span>
+        <span class="action">Reply</span>
+      </div>
+      <p>
+        <b>@maxblagun</b> If you're still new, I'd recommend focusing on the
+        fundamentals of HTML, CSS and JS first.
+      </p>
+    </div>
+  </div>
+
+ 
+  <div class="comment reply">
+    <div class="score">
+      <span class="plus">+</span>
+      <span>2</span>
+      <span class="plus">-</span>
+    </div>
+
+    <img src="you.jpeg" class="avatar">
+
+    <div class="content">
+      <div class="header">
+        <strong>juliusomo</strong>
+        <span class="you">you</span>
+        <span class="time">2 days ago</span>
+        <span class="delete">Delete</span>
+        <span class="action">Edit</span>
+      </div>
+      <p>
+        I couldn't agree more with this. Everything moves so fast and it always
+        seems like everyone knows the newest library/framework.But the fundamentals are what stay constant.
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="add">
+    <img src="you.jpeg" class="avatar">
+    <input placeholder="Add a comment...">
+    <button>SEND</button>
+  </div>
+
+</div>
+
+</body>
+</html>
